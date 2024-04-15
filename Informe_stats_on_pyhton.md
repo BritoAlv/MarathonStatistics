@@ -40,7 +40,7 @@ Por motivos pragmáticos decidimos trabajar solamente sobre los datos recopilado
 
 ### Informe
 
-La primera pregunta estadística que nos viene a la mente cuando hablamos de competiciones (incluso antes de realizar un análisis exploratorio) es: ¿cómo se comportaron los resultado?, o mejor formulado: ¿qué distribución poseen?
+La primera pregunta estadística que nos viene a la mente cuando hablamos de competiciones (incluso antes de realizar un análisis exploratorio) es: ¿cómo se comportaron los resultados?, o mejor formulado: ¿qué distribución poseen?
 
 ![](./pics/results_distro.png)
 
@@ -78,6 +78,11 @@ Como un ejercicio estadístico, similar a problemas que surgen en la vida real; 
 
 - Suponiendo que los tiempos de carrera poseen una **distribución normal**, con **varianza conocida** (tomemos la varianza de la carrera de 2005); y que solo podemos seleccionar 50 tiempos de los resultados del 2015 de manera aleatoria (imaginemos que no podemos permitirnos pagar por más).
 `¿Podríamos afirmar con estos datos que la carrera de 2015 fue en promedio más rápida que la del 2005?`
+
+![](./pics/2005_distro.png)
+![](./pics/2015_distro.png)
+
+Las gráficas parecen indicar que sí ... vamos a ver.
 
 **Solución**
 
