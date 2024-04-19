@@ -175,12 +175,10 @@ W = 0.98149, p-value = 0.1735
 
 El *p*-value da $ > 0.05$, por lo que la hipótesis nula no es rechazada.
 
-### Grupos por edades y géneros:
+### Si se escogen dos muestras de la población que tan posible es que su tiempo promedio sea el mismo ?
 
-![](./pics/alv_3.png)
-![](./pics/alv_4.png)
+Para eso se puede usar el siguiente test:
 
-### T-test para chequear si las medias en diferentes samples de la población son las mismas.
 ```
 Welch Two Sample t-test
 
@@ -195,6 +193,12 @@ mean of x mean of y
 ```
 
 El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05.
+
+### Grupos por edades y géneros:
+
+![](./pics/alv_3.png)
+![](./pics/alv_4.png)
+
 
 ### ANOVA
 
@@ -227,23 +231,33 @@ X-squared = 892.8, df = 10, p-value < 2.2e-16
 
 ![](./pics/alv_6.png)
 ![](./pics/alv_7.png)
+ 
 
 ### Si me demoro x segundos corriendo como estoy con respecto a los demás :
 
-Para esto es posible construir una distribución a partir de los valores dados, para poder dado un valor de segundos obtener un porcentaje.
+Para esto es posible construir una distribución a partir de los valores dados, para poder dado un valor de segundos obtener un porcentaje. Como se puede ver en la curva la mayor probabilidad o porciento reside entre los $12000$ y $$18000$ segundos, siendo muy baja la posibilidad de acabar antes de los $10000$ segundos.
 
 ![](./pics/ecdf.png)
 
 ### Se podrá predecir el género de las personas a partir de su edad y los segundos que le tomó la carrera :
 
+#### Los supuestos del modelo :
+
+En el QQ-plot los valores de mis datos, están ordenados de menor a mayor, en el eje $x$ estarían los puntos que tendría con un sample size con ese mismo tamaño, con una distribución normal, estandarizada. En el eje $y$ estarían mis datos estandarizados, si tuvieran una distribución normal, entonces deberían estar todos en la línea.
+
 Un modelo linear de lo anterior posee el siguiente $QQ-Plot$ que como los valores no se apegan a la línea recta podemos ver que no será tan bueno en la predicción.
 
 ![](./pics/qqplotmodel.png)
 
-### Los supuestos del modelo :
+El R-Squared del modelo obtenido es $0.1525$: R Squared es bajo, lo que significa que el modelo no predecirá bien. el R-coeciente-cuadrado mide la proporción de la varianza de la variable dependiente que es justificado por las variables independientes, o sea mientras más bajo menos eficiente es el modelo para predecir datos que varien más con respecto a la media.
 
 ![](./pics/moreresiduals.png)
+
 ![](./pics/histogramresiduals.png)
+
+Como se puede visualizar en el histograma los residuos no siguen una distribución normal.
+
+F-statistic:  1576 on 2 and 17523 DF. La estadística F se utiliza para probar la significancia general del modelo. Es una relación entre la varianza explicada y la varianza inexplicada. Un estadístico F más alto indica que el modelo explica una cantidad significativa de la varianza en la variable dependiente. El estadístico F se utiliza para realizar la prueba F, que prueba la hipótesis nula de que todos los coeficientes de regresión son iguales a cero. Si el valor p asociado con el estadístico F es menor que el nivel de significancia (generalmente 0,05), rechazamos la hipótesis nula y concluimos que al menos uno de los coeficientes es significativamente diferente de cero. A partir de esta se obtiene un p-value igual a 0.
 
 También podemos visualizar que tan bien predice de esta forma:
 
