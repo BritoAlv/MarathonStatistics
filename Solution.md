@@ -56,6 +56,15 @@ Utilizando los tests de **Kolmogorov-Smirnov** y **Shapiro** sobre `muestras ale
 
 #### 1. Análisis Exploratorio de los Datos
 
+**Primero una vista global de los datos**:
+
+![](./pics/summary.png)
+
+A simple vista podemos ver que los datos parecen correctos, la edad mínima para correr en el maratón es de $18$ años, mientras que la máxima fue de $83$. La media del tiempo necesitado para correr la carrera fue de $14258$ segundos.
+
+**Clasificarlos por los segundos dedicados a realizar la carrera y contrastarlo contra la edad.**
+![](./pics/alv_1.png)
+
 **Dispersión de Lugar vs País de Residencia**
 
 ![](./pics/dispersión_overall_countryresidence.png)
@@ -138,13 +147,12 @@ P-value: 2.1539025631090672e-14
 ```
 Aquí se observa cuan evidente es la diferencia de los tiempos entre las personas jóvenes con respecto a las de las personas de la tercera edad. 
 
-**Clasificarlos por los segundos dedicados a realizar la carrera y contrastarlo contra la edad.**
-![](./pics/alv_1.png)
 
-**Las edades sigue una distribución normal?**
+### Siguen las edades una distribución normal ?
+
 ![](./pics/alv_2.png)
 
-### Shapiro - Wilk Test Para Normalidad, con un sample de $100$ personas aleatorias en la entrada.
+Podemos realizar un test de Shapiro-Wilk con un sample de $30$ personas, el cual nos dirá si los datos provienen de uns distribución normal.
 
 ```
 Shapiro-Wilk normality test
@@ -152,7 +160,8 @@ data:  sample_data$age
 W = 0.98149, p-value = 0.1735
 ```
 
-El *p*-value da $ > 0.05$, por lo que la hipótesis nula no es rechazada.
+El *p*-value da $ > 0.05$, por lo que la hipótesis nula no es rechazada. O sea provienen de una distribución normal.
+
 
 ### Si se escogen dos muestras de la población que tan posible es que su tiempo promedio sea el mismo ?
 
@@ -173,13 +182,13 @@ mean of x mean of y
 
 El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05.
 
-### Grupos por edades y géneros:
+
+### Habrá alguna relación entre los corredores si los agrupamos por edad y género
+
+Lo visualizamos : 
 
 ![](./pics/alv_3.png)
 ![](./pics/alv_4.png)
-
-
-### ANOVA
 
 Creando grupos por edades y géneros puedo realizar un análisis de varianza, pero dado que son muchos grupos conviene realizar este a cada par de grupos, a partir de lo cual se obtuvieron los siguientes intervalos de confianza representando la hipótesis de que hay asociación entre cada par.
 
@@ -187,7 +196,14 @@ Creando grupos por edades y géneros puedo realizar un análisis de varianza, pe
 
 La longitud de un segmento representa el rango de el intervalo de confidencia para la diferencia entre las medias de dos grupos. Un segmento más largo indica menos certeza sobre la hipótesis que puede ser generado por una mayor desviación estándar o un menor tamaño de muestra en uno de los dos grupos. Si una línea cruza la línea vertical en $0$, eso significa que incluye a el $0$, o sea, no hay una diferencia estadísticamente significante entre la media de los grupos.
 
-### Grupos de Edad vs Grupos de Velocidad
+### Habrá alguna relación entre los corredores si los agrupamos por edad y velocidad :
+
+Podemos visualizarlo :
+
+![](./pics/alv_6.png)
+![](./pics/alv_7.png)
+
+Para comprobar se puede usar el Chi-Square Test :
 
 El Chi-square test es un test estadístico que es usado para determinar si hay una asociación entre variables categóricas en una muestra. Compara las frecuencias observadas con las esperadas, con que tanta frecuencia una categoría ocurrirá si no hay asociación entre las variables.
 
@@ -207,10 +223,8 @@ El Chi-square funciona calculando una estadística llamada la Chi-square estadí
 data:  contingency_table
 X-squared = 892.8, df = 10, p-value < 2.2e-16
 ```
-
-![](./pics/alv_6.png)
-![](./pics/alv_7.png)
  
+Dado que el p-value es prácticamente $0$, puedo concluir que hay asociación entre estos grupos de edades.
 
 ### Si me demoro x segundos corriendo como estoy con respecto a los demás :
 
