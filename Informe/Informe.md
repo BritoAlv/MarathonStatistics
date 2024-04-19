@@ -89,40 +89,6 @@ Podemos extraer dos conclusiones importantes de la matriz de correlaciones obten
 
 La segunda conclusión es que existe una correlación positiva débil entre la edad y el tiempo total; un resultado un poco contradictorio con lo que nos dicta la intuición, pensaríamos que la correlación es positiva fuerte. La explicación, se encuentra en la biología, a medida que envejecemos las fibras musculares rápidas, encargadas de movimientos de fuerza y potencia, se pierden con mayor rapidez que las fibras lentas, útiles para ejercicios de resistencia como correr; Eliud Kipchoge es el vivo ejemplo, cuando con 40 años fue capaz de bajar de las 2 horas en la maratón (se pensaba que era una marca imposible de conseguir).
 
-<!-- **Como se comportan los segundos en las distintas competencias de varios años?**
-
-```
-2005 vs 2010
-Statistic:  224800194.0
-P Value:  2.96605576998012e-124 
-
-2005 vs 2015
-Statistic:  280031451.0
-P Value:  2.643202383662268e-281 
-
-2010 vs 2015 
-Statistic:  321809478.0
-P Value:  8.137481892534864e-45 
-```
-
-El valor P es extremadamente pequeño, lo que indica que es muy improbable que las diferencias en los tiempos de las carreras de 2005 y 2010 sean simplemente debido al azar al igual que 2010/2015 y 2005/2015. Por lo tanto, se puede concluir que hay una diferencia significativa en los tiempos de las carreras entre 2005 y 2010.Esto podría indicar que hay cambios en los tiempos de las carreras a lo largo de estos años, posiblemente debido a mejoras en las condiciones de la carrera, cambios en las estrategias de los corredores, o una combinación de ambos.Es importante recordar que, aunque el test Mann-Whitney U es sensible a las diferencias en las distribuciones de los dos grupos, no proporciona información sobre la dirección de la diferencia (si los tiempos de 2015 son más rápidos o más lentos que los de 2005 o 2010).
-
-
-Como era de esperarse existe una fuerte relación entre la variable segundos y pace, tal y como muestran estos los siguientes resultados: 
-
-```
-Spearman's correlation: 0.999992296852691
-P-value: 0.0
-```
-
-
-**Que relación tienen los segundos con la edad?**
-```
-T-statistic: -7.821031162698099
-P-value: 2.1539025631090672e-14
-```
-Aquí se observa cuan evidente es la diferencia de los tiempos entre las personas jóvenes con respecto a las de las personas de la tercera edad.  -->
-
 #### 2. Preguntas sobre los datos
 
 **2.1 ¿Siguen las edades una distribución normal?**
