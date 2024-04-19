@@ -1,8 +1,8 @@
 # Análisis Estadístico sobre la Maratón de Boston
 **Integrantes**
-Álvaro Luis González Brito 
-Javier Lima García
-Álbaro Suárez Valdes
+  - Álvaro Luis González Brito 
+  - Javier Lima García
+  - Álbaro Suárez Valdes
 
 ## Datos utilizados
 
@@ -105,7 +105,7 @@ Los resultados:
 ![](./pics/unknown_variance_comparison.png)
 
 
-**De que manera se comportan los segundos que demora cada corredor y que relacion tiene con los demas datos?**
+**De que manera se comportan los segundos que demora cada corredor y que relación tiene con los demás datos?**
 
 
 Los datos obtenidos muestran una distribución ligeramente sesgada hacia la izquierda, con una desviación estándar que indica una dispersión considerable de los datos alrededor de la media. La prueba de Kolmogorov-Smirnov sugiere que los datos no siguen una distribución normal, lo cual es relevante para consideraciones estadísticas y de modelado.
@@ -144,7 +144,7 @@ P Value:  8.137481892534864e-45
 El valor P es extremadamente pequeño, lo que indica que es muy improbable que las diferencias en los tiempos de las carreras de 2005 y 2010 sean simplemente debido al azar al igual que 2010/2015 y 2005/2015. Por lo tanto, se puede concluir que hay una diferencia significativa en los tiempos de las carreras entre 2005 y 2010.Esto podría indicar que hay cambios en los tiempos de las carreras a lo largo de estos años, posiblemente debido a mejoras en las condiciones de la carrera, cambios en las estrategias de los corredores, o una combinación de ambos.Es importante recordar que, aunque el test Mann-Whitney U es sensible a las diferencias en las distribuciones de los dos grupos, no proporciona información sobre la dirección de la diferencia (si los tiempos de 2015 son más rápidos o más lentos que los de 2005 o 2010).
 
 
-Como era de esperarse existe una fuerte realcion entre la variable segundos y pace, tal y como muestran estos los siguientes resultados: 
+Como era de esperarse existe una fuerte relación entre la variable segundos y pace, tal y como muestran estos los siguientes resultados: 
 
 ```
 Spearman's correlation: 0.999992296852691
@@ -152,12 +152,12 @@ P-value: 0.0
 ```
 
 
-**Que relacion tienen los segundos con la edad?**
+**Que relación tienen los segundos con la edad?**
 ```
 T-statistic: -7.821031162698099
 P-value: 2.1539025631090672e-14
 ```
-Aqui se observa cuan evidente es la diferencia de los tiempos entre las personas jovenes con respecto a las de las personas de la tercera edad. 
+Aquí se observa cuan evidente es la diferencia de los tiempos entre las personas jóvenes con respecto a las de las personas de la tercera edad. 
 
 **Clasificarlos por los segundos dedicados a realizar la carrera y contrastarlo contra la edad.**
 ![](./pics/alv_1.png)
@@ -177,14 +177,6 @@ El *p*-value da $ > 0.05$, por lo que la hipótesis nula no es rechazada.
 
 ### Grupos por edades y géneros:
 
-Hay cuatro escenarios:
-
-    - H0 es verdad, H0 no es rechazada
-    - H0 es verdad, H0 es rechazada
-    - H0 no es verdad, H0 no es rechazada
-    - H0 no es verdad, H0 es rechazada
-
-El p-value representa la probabilidad, asumiendo la hipótesis, de obtener un resultado tan extremo como el dado, entonces si se obtiene un p-value menor que el coeficiente de confianza prefijado, se rechaza la hipótesis, en otro caso se falla a rechazar la hipótesis.
 ![](./pics/alv_3.png)
 ![](./pics/alv_4.png)
 
@@ -202,16 +194,19 @@ mean of x mean of y
  13858.72  14215.66 
 ```
 
-El p-value menor que 0.05 significa que si acepto la hipótesis la probabilidad de haber visto ese resultado es < 0.05.
+El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05.
 
 ### ANOVA
+
+Creando grupos por edades y géneros puedo realizar un análisis de varianza, pero dado que son muchos grupos conviene realizar este a cada par de grupos, a partir de lo cual se obtuvieron los siguientes intervalos de confianza representando la hipótesis de que hay asociación entre cada par.
+
 ![](./pics/alv_5.png)
 
-La longitud de un segmento representa el rango de el intervalo de confidencia para la diferencia entre las mediasd de dos grupos. Un segmento más largo indica menos certeza sobre la hipótesis que puede ser generado por una mayor desviación estándar o un menor sample size en uno de los dos grupos. Si una línea cruza la línea vertical en $0$, eso significa que incluye a el $0$, o sea, no hay una diferencia estadísticamente significante entre la media de los grupos.
+La longitud de un segmento representa el rango de el intervalo de confidencia para la diferencia entre las medias de dos grupos. Un segmento más largo indica menos certeza sobre la hipótesis que puede ser generado por una mayor desviación estándar o un menor tamaño de muestra en uno de los dos grupos. Si una línea cruza la línea vertical en $0$, eso significa que incluye a el $0$, o sea, no hay una diferencia estadísticamente significante entre la media de los grupos.
 
 ### Grupos de Edad vs Grupos de Velocidad
 
-El Chi-square test es un test estadístico que es usado para determinar si hay una asociación entre variables categoricas en una muestra. Compara las frecuencias observadas con las esperadas, con que tanta frecuencia una categoría ocurrirá si no hay asociación entre las variables.
+El Chi-square test es un test estadístico que es usado para determinar si hay una asociación entre variables categóricas en una muestra. Compara las frecuencias observadas con las esperadas, con que tanta frecuencia una categoría ocurrirá si no hay asociación entre las variables.
 
 El Chi-square funciona calculando una estadística llamada la Chi-square estadística, que sigue una distribución de este tipo cuando la hipótesis nula se cumple, que es que no hay asociación entre las variables.
 
@@ -233,3 +228,23 @@ X-squared = 892.8, df = 10, p-value < 2.2e-16
 ![](./pics/alv_6.png)
 ![](./pics/alv_7.png)
 
+### Si me demoro x segundos corriendo como estoy con respecto a los demás :
+
+Para esto es posible construir una distribución a partir de los valores dados, para poder dado un valor de segundos obtener un porcentaje.
+
+![](./pics/ecdf.png)
+
+### Se podrá predecir el género de las personas a partir de su edad y los segundos que le tomó la carrera :
+
+Un modelo linear de lo anterior posee el siguiente $QQ-Plot$ que como los valores no se apegan a la línea recta podemos ver que no será tan bueno en la predicción.
+
+![](./pics/qqplotmodel.png)
+
+### Los supuestos del modelo :
+
+![](./pics/moreresiduals.png)
+![](./pics/histogramresiduals.png)
+
+También podemos visualizar que tan bien predice de esta forma:
+
+![](./pics/model-predictio.png)
