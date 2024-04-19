@@ -130,7 +130,6 @@ El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la 
 Lo visualizamos: 
 
 ![](./pics/alv_3.png)
-![](./pics/alv_4.png)
 
 Creando grupos por edades y géneros podemos realizar un análisis de la varianza, pero dado que son muchos grupos conviene aplicarlo a cada par de estos. Como resultado se obtuvieron los siguientes intervalos de confianza representando la hipótesis de que hay asociación entre cada par.
 
@@ -170,7 +169,7 @@ Dado que el p-value es prácticamente $0$, puedo concluir que hay asociación en
 
 **2.5 ¿Si me demoro x segundos corriendo cómo estoy con respecto a los demás?**
 
-Para esto es posible construir una distribución a partir de los valores obtenidos, para poder, dado un valor de segundos, obtener un porcentaje. Como se puede ver en la curva la mayor probabilidad o por ciento reside entre los $12000$ y $$18000$ segundos, siendo muy baja la posibilidad de acabar antes de los $10000$ segundos.
+Para esto es posible construir una distribución a partir de los valores obtenidos, para poder, dado un valor de segundos, obtener un porcentaje. Como se puede ver en la curva la mayor probabilidad o por ciento reside entre los $12000$ y $18000$ segundos, siendo muy baja la posibilidad de acabar antes de los $10000$ segundos.
 
 ![](./pics/ecdf.png)
 
