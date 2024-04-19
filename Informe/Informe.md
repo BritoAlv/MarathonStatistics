@@ -122,7 +122,7 @@ mean of x mean of y
  13858.72  14215.66 
 ```
 
-El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05.
+El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05. El test en este caso nos dice que no es cierto, más probable debido a un sample size pequeño.
 
 
 **2.3 ¿Habrá alguna relación entre los corredores si los agrupamos por edad y género?**
