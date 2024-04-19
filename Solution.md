@@ -147,8 +147,9 @@ P-value: 2.1539025631090672e-14
 ```
 Aquí se observa cuan evidente es la diferencia de los tiempos entre las personas jóvenes con respecto a las de las personas de la tercera edad. 
 
+#### 3. Preguntas sobre los datos
 
-### Siguen las edades una distribución normal ?
+**Siguen las edades una distribución normal**
 
 ![](./pics/alv_2.png)
 
@@ -163,7 +164,7 @@ W = 0.98149, p-value = 0.1735
 El *p*-value da $ > 0.05$, por lo que la hipótesis nula no es rechazada. O sea provienen de una distribución normal.
 
 
-### Si se escogen dos muestras de la población que tan posible es que su tiempo promedio sea el mismo ?
+**Si se escogen dos muestras de la población que tan posible es que su tiempo promedio sea el mismo**
 
 Para eso se puede usar el siguiente test:
 
@@ -183,7 +184,7 @@ mean of x mean of y
 El p-value menor que 0.05 significa que en caso de ser cierta la hipótesis, la probabilidad de haber visto ese resultado es < 0.05.
 
 
-### Habrá alguna relación entre los corredores si los agrupamos por edad y género
+**Habrá alguna relación entre los corredores si los agrupamos por edad y género**
 
 Lo visualizamos : 
 
@@ -196,7 +197,7 @@ Creando grupos por edades y géneros puedo realizar un análisis de varianza, pe
 
 La longitud de un segmento representa el rango de el intervalo de confidencia para la diferencia entre las medias de dos grupos. Un segmento más largo indica menos certeza sobre la hipótesis que puede ser generado por una mayor desviación estándar o un menor tamaño de muestra en uno de los dos grupos. Si una línea cruza la línea vertical en $0$, eso significa que incluye a el $0$, o sea, no hay una diferencia estadísticamente significante entre la media de los grupos.
 
-### Habrá alguna relación entre los corredores si los agrupamos por edad y velocidad :
+**Habrá alguna relación entre los corredores si los agrupamos por edad y velocidad**
 
 Podemos visualizarlo :
 
@@ -226,15 +227,15 @@ X-squared = 892.8, df = 10, p-value < 2.2e-16
  
 Dado que el p-value es prácticamente $0$, puedo concluir que hay asociación entre estos grupos de edades.
 
-### Si me demoro x segundos corriendo como estoy con respecto a los demás :
+**Si me demoro x segundos corriendo como estoy con respecto a los demás**
 
 Para esto es posible construir una distribución a partir de los valores dados, para poder dado un valor de segundos obtener un porcentaje. Como se puede ver en la curva la mayor probabilidad o porciento reside entre los $12000$ y $$18000$ segundos, siendo muy baja la posibilidad de acabar antes de los $10000$ segundos.
 
 ![](./pics/ecdf.png)
 
-### Se podrá predecir el género de las personas a partir de su edad y los segundos que le tomó la carrera :
+**Se podrá predecir el género de las personas a partir de su edad y los segundos que le tomó la carrera :**
 
-#### Los supuestos del modelo :
+Los supuestos del modelo :
 
 En el QQ-plot los valores de mis datos, están ordenados de menor a mayor, en el eje $x$ estarían los puntos que tendría con un sample size con ese mismo tamaño, con una distribución normal, estandarizada. En el eje $y$ estarían mis datos estandarizados, si tuvieran una distribución normal, entonces deberían estar todos en la línea.
 
