@@ -104,27 +104,6 @@ Los resultados:
 
 ![](./pics/unknown_variance_comparison.png)
 
-
-**De que manera se comportan los segundos que demora cada corredor y que relación tiene con los demás datos?**
-
-
-Los datos obtenidos muestran una distribución ligeramente sesgada hacia la izquierda, con una desviación estándar que indica una dispersión considerable de los datos alrededor de la media. La prueba de Kolmogorov-Smirnov sugiere que los datos no siguen una distribución normal, lo cual es relevante para consideraciones estadísticas y de modelado.
-
-```
-count    15817.000000
-mean     14277.055952
-std       2221.848322
-min       7905.000000
-25%      12709.000000
-50%      13993.000000
-75%      15598.000000
-max      24434.000000
-Name: seconds, dtype: float64
-KstestResult(statistic=1.0, pvalue=0.0, statistic_location=7905, statistic_sign=-1)
-```
-
-![](./pics/seconds_1.png)
-
 **Como se comportan los segundos en las distintas competencias de varios años?**
 
 ```
