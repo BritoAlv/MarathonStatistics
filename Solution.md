@@ -1,4 +1,8 @@
 # Análisis Estadístico sobre la Maratón de Boston
+**Integrantes**
+Álvaro Luis González Brito 
+Javier Lima García
+Álbaro Suárez Valdes
 
 ## Datos utilizados
 
